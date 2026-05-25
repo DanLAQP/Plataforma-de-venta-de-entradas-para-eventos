@@ -17,16 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Actualizar total en tiempo real
-    const cantidadInput = document.getElementById('cantidad');
-    if (cantidadInput) {
-        cantidadInput.addEventListener('change', function() {
-            const nuevaCantidad = parseInt(this.value);
-            if (nuevaCantidad <= 0) {
-                this.value = 1;
-            }
-        });
-    }
+    // Actualización de cantidad (REMOVIDO - incompatible con v2.1.1 que usa selección de asientos)
+    // El código de actualizarResumen() en comprar.html maneja la actualización correctamente
     
     // Animación de carga de imágenes
     const imagenes = document.querySelectorAll('img');
@@ -43,6 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
     tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl);
     });
+    
+    // Interactividad del mapa de asientos (REMOVIDO - conflictúa con toggleAsiento() en comprar.html)
+    // El código de toggleAsiento() en comprar.html maneja la selección de asientos correctamente
+    // incluyendo deselección, validación de ocupados, etc.
 });
 
 // Función para formatear dinero
@@ -67,4 +63,38 @@ function mostrarNotificacion(mensaje, tipo = 'success') {
     setTimeout(() => {
         alertDiv.remove();
     }, 5000);
+}
+
+// Función para actualizar asientos seleccionados
+function actualizarAsientosSeleccionados() {
+    const seleccionados = document.querySelectorAll('.asiento.seleccionado');
+    const cantidad = seleccionados.length;
+    
+    if (cantidad > 0) {
+        console.log(`Asientos seleccionados: ${cantidad}`);
+    }
+}
+
+// Función para cargar mapa de asientos vía API
+async function cargarMapaAsientos(evento_id) {
+    try {
+        const response = await fetch(`/api/asientos/${evento_id}`);
+        const data = await response.json();
+        
+        console.log(`Total: ${data.total_asientos}, Disponibles: ${data.disponibles}, Ocupados: ${data.ocupados}`);
+        
+        return data;
+    } catch (error) {
+        console.error('Error al cargar mapa de asientos:', error);
+        mostrarNotificacion('Error al cargar el mapa de asientos', 'danger');
+    }
+}
+
+// Función para descargar PDF con confirmación visual
+function descargarPDF(compra_id, nombre_evento) {
+    mostrarNotificacion(`📥 Descargando entrada para ${nombre_evento}...`, 'info');
+    
+    setTimeout(() => {
+        window.location.href = `/descargar-entrada/${compra_id}`;
+    }, 500);
 }

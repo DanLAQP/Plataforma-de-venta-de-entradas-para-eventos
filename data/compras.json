@@ -8,6 +8,92 @@
     "cantidad": 2,
     "precio_unitario": 45.0,
     "total": 90.0,
-    "fecha_compra": "2026-05-24 22:08:38"
+    "fecha_compra": "2026-05-24 22:08:38",
+    "codigo_qr": "ENTRADA-1-1",
+    "asientos": [
+      "A1",
+      "A2"
+    ]
+  },
+  {
+    "id": 2,
+    "evento_id": 4,
+    "evento_nombre": "Expo de Arte Contemporáneo",
+    "nombre": "Luis Daniel",
+    "correo": "laguero@unsa.edu.pe",
+    "cantidad": 1,
+    "precio_unitario": 15.0,
+    "total": 15.0,
+    "fecha_compra": "2026-05-24 22:32:55",
+    "codigo_qr": "ENTRADA-2-4",
+    "asientos": [
+      "A1"
+    ]
+  },
+  {
+    "id": 3,
+    "evento_id": 1,
+    "evento_nombre": "Festival de Música 2026",
+    "nombre": "Luis",
+    "correo": "laguero@unsa.edu.pe",
+    "cantidad": 1,
+    "precio_unitario": 45.0,
+    "total": 45.0,
+    "fecha_compra": "2026-05-24 22:37:09",
+    "codigo_qr": "ENTRADA-3-1",
+    "asientos": [
+      "B1"
+    ]
+  },
+  {
+    "id": 4,
+    "evento_id": 1,
+    "evento_nombre": "Festival de Música 2026",
+    "nombre": "dani",
+    "correo": "laguero@unsa.edu.pe",
+    "cantidad": 1,
+    "precio_unitario": 45.0,
+    "total": 45.0,
+    "fecha_compra": "2026-05-24 22:48:33",
+    "codigo_qr": "ENTRADA-4-1",
+    "asientos": [
+      "J15"
+    ]
+  },
+  {
+    "id": 5,
+    "evento_id": 1,
+    "evento_nombre": "Festival de Música 2026",
+    "nombre": "Test",
+    "correo": "test@gmail.com",
+    "cantidad": 7,
+    "precio_unitario": 45.0,
+    "total": 315.0,
+    "fecha_compra": "2026-05-24 22:51:03",
+    "codigo_qr": "ENTRADA-5-1",
+    "asientos": [
+      "E8",
+      "E9",
+      "F10",
+      "F11",
+      "F8",
+      "F9",
+      "G11"
+    ]
+  },
+  {
+    "id": 6,
+    "evento_id": 1,
+    "evento_nombre": "Festival de Música 2026",
+    "nombre": "Juan Prueba",
+    "correo": "juan@prueba.com",
+    "cantidad": 1,
+    "precio_unitario": 45.0,
+    "total": 45.0,
+    "fecha_compra": "2026-05-24 23:09:24",
+    "codigo_qr": "ENTRADA-6-1",
+    "asientos": [
+      "J5"
+    ]
   }
 ]

@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}Mapa de Asientos - {{ evento.nombre }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="mb-4">
+                <a href="/evento/{{ evento.id }}" class="btn btn-outline-secondary btn-sm">&larr; Volver</a>
+            </div>
+            
+            <h1 class="mb-2">Mapa de Asientos</h1>
+            <h5 class="text-muted mb-4">{{ evento.nombre }}</h5>
+            
+            <!-- Estadísticas -->
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h6 class="card-title text-muted">Asientos Disponibles</h6>
+                            <h3 class="text-success">{{ disponibles }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h6 class="card-title text-muted">Asientos Ocupados</h6>
+                            <h3 class="text-danger">{{ ocupados }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h6 class="card-title text-muted">Total Asientos</h6>
+                            <h3>{{ total_asientos }}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Leyenda -->
+            <div class="mb-4 p-3 bg-light rounded">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="mb-0">
+                            <span class="badge bg-success p-2">■</span> Disponible
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="mb-0">
+                            <span class="badge bg-danger p-2">■</span> Ocupado
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mapa de Asientos -->
+            <div class="mapa-asientos-container p-4 bg-light rounded">
+                <div class="mapa-asientos">
+                    <!-- Pantalla -->
+                    <div class="pantalla">
+                        <strong>🎬 PANTALLA / ESCENARIO</strong>
+                    </div>
+                    
+                    <!-- Asientos por fila -->
+                    {% for fila_letra in ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'] %}
+                        {% set asientos_fila = mapa_filas.get(fila_letra, []) %}
+                        {% if asientos_fila %}
+                            <div class="fila-asientos">
+                                <div class="letra-fila">{{ fila_letra }}</div>
+                                <div class="asientos">
+                                    {% for asiento in asientos_fila | sort(attribute='columna') %}
+                                        <div class="asiento {% if asiento.ocupado %}ocupado{% else %}disponible{% endif %}" 
+                                             title="{{ asiento.codigo }} - {% if asiento.ocupado %}Ocupado{% else %}Disponible{% endif %}">
+                                            <span>{{ asiento.columna }}</span>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                <div class="letra-fila">{{ fila_letra }}</div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <a href="/comprar/{{ evento.id }}" class="btn btn-success btn-lg">
+                    🎟️ Comprar Entrada
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -5,17 +5,24 @@
 {% block content %}
 <div class="container py-5">
     <div class="row">
-        <div class="col-md-6 mx-auto">
+        <div class="col-lg-8">
             <div class="mb-3">
                 <a href="/evento/{{ evento.id }}" class="btn btn-outline-secondary btn-sm">&larr; Volver</a>
             </div>
             
-            <h1 class="mb-4">Comprar Entrada</h1>
+            <h1 class="mb-4">🎫 Comprar Entrada</h1>
+            
+            {% if error %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>⚠️ Error:</strong> {{ error }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            {% endif %}
             
             <div class="card mb-4">
                 <div class="card-body">
                     <h5 class="card-title">{{ evento.nombre }}</h5>
-                    <p class="text-muted">
+                    <p class="text-muted mb-0">
                         📅 {{ evento.fecha }}<br>
                         📍 {{ evento.ubicacion }}<br>
                         💵 ${{ "%.2f"|format(evento.precio) }} por entrada
@@ -23,64 +30,290 @@
                 </div>
             </div>
             
-            {% if error %}
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{ error }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <!-- MAPA DE ASIENTOS INTERACTIVO -->
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h6 class="mb-0">🗺️ Selecciona tus asientos</h6>
                 </div>
-            {% endif %}
-            
-            <form method="POST" id="formCompra">
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre *</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Tu nombre completo">
-                    <small class="form-text text-muted">Será usado para la entrada</small>
-                </div>
-                
-                <div class="mb-3">
-                    <label for="correo" class="form-label">Correo electrónico *</label>
-                    <input type="email" class="form-control" id="correo" name="correo" required placeholder="tu@correo.com">
-                    <small class="form-text text-muted">Recibirás la confirmación en este correo</small>
-                </div>
-                
-                <div class="mb-3">
-                    <label for="cantidad" class="form-label">Cantidad de entradas *</label>
-                    <input type="number" class="form-control" id="cantidad" name="cantidad" min="1" max="{{ evento.entradas_disponibles }}" required value="1" onchange="actualizarTotal()">
-                    <small class="form-text text-muted">Máximo: {{ evento.entradas_disponibles }} entradas disponibles</small>
-                </div>
-                
-                <div class="card mb-4 bg-light">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Precio unitario:</span>
-                            <span>${{ "%.2f"|format(evento.precio) }}</span>
+                <div class="card-body">
+                    <!-- Leyenda -->
+                    <div class="d-flex gap-3 mb-3 justify-content-center flex-wrap">
+                        <span class="d-flex align-items-center gap-2">
+                            <span class="asiento disponible" style="width: 35px; height: 35px;">
+                                <span class="numero-asiento">A1</span>
+                            </span>
+                            Disponible
+                        </span>
+                        <span class="d-flex align-items-center gap-2">
+                            <span class="asiento ocupado" style="width: 35px; height: 35px;">
+                                <span class="numero-asiento">A1</span>
+                            </span>
+                            Ocupado
+                        </span>
+                        <span class="d-flex align-items-center gap-2">
+                            <span class="asiento seleccionado" style="width: 35px; height: 35px;">
+                                <span class="numero-asiento">A1</span>
+                            </span>
+                            Seleccionado
+                        </span>
+                    </div>
+                    
+                    <!-- Pantalla -->
+                    <div class="text-center mb-4">
+                        <div class="pantalla">
+                            🎬 PANTALLA 🎬
                         </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Cantidad:</span>
-                            <span id="cantidadMuestra">1</span>
+                    </div>
+                    
+                    <!-- Mapa de Asientos -->
+                    <div class="mapa-asientos-container">
+                        <div class="mapa-asientos">
+                            {% set filas = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'] %}
+                            {% for fila in filas %}
+                                <div class="fila-asientos d-flex align-items-center gap-2">
+                                    <span class="letra-fila">{{ fila }}</span>
+                                    <div class="asientos-row d-flex gap-2 flex-wrap">
+                                        {% for col in range(1, 16) %}
+                                            {% set codigo = fila + col|string %}
+                                            {% set es_ocupado = mapa_asientos | selectattr('codigo', 'equalto', codigo) | first | default(none) %}
+                                            {% if es_ocupado and es_ocupado.ocupado %}
+                                                <button type="button" class="asiento ocupado" 
+                                                        data-asiento="{{ codigo }}" 
+                                                        disabled 
+                                                        title="{{ codigo }} - Ocupado">
+                                                    <span class="numero-asiento">{{ codigo }}</span>
+                                                </button>
+                                            {% else %}
+                                                <button type="button" class="asiento disponible" 
+                                                        data-asiento="{{ codigo }}" 
+                                                        onclick="toggleAsiento(this)"
+                                                        title="{{ codigo }} - Disponible">
+                                                    <span class="numero-asiento">{{ codigo }}</span>
+                                                </button>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <span class="letra-fila">{{ fila }}</span>
+                                </div>
+                            {% endfor %}
                         </div>
-                        <hr>
-                        <div class="d-flex justify-content-between">
-                            <strong>Total:</strong>
-                            <strong id="totalPrecio">${{ "%.2f"|format(evento.precio) }}</strong>
+                    </div>
+                    
+                    <!-- Asientos Seleccionados -->
+                    <div class="mt-4 p-3 bg-light rounded">
+                        <h6>Asientos seleccionados:</h6>
+                        <div id="asientosSeleccionados" class="d-flex gap-2 flex-wrap">
+                            <span class="text-muted">Ninguno seleccionado</span>
                         </div>
                     </div>
                 </div>
-                
-                <button type="submit" class="btn btn-success btn-lg w-100">Comprar Ahora</button>
-            </form>
+            </div>
+        </div>
+        
+        <!-- FORMULARIO Y RESUMEN DE COMPRA -->
+        <div class="col-lg-4">
+            <div class="card sticky-top">
+                <div class="card-header bg-success text-white">
+                    <h6 class="mb-0">📋 Datos de Compra</h6>
+                </div>
+                <div class="card-body">
+                    <form method="POST" id="formCompra">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre *</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" 
+                                   required placeholder="Tu nombre completo">
+                            <small class="form-text text-muted">Para la entrada</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">Correo electrónico *</label>
+                            <input type="email" class="form-control" id="correo" name="correo" 
+                                   required placeholder="tu@correo.com">
+                            <small class="form-text text-muted">Confirmación enviada aquí</small>
+                        </div>
+                        
+                        <!-- Campos para asientos seleccionados -->
+                        <div id="asientosContainer"></div>
+                        
+                        <!-- Validación de asientos -->
+                        <div class="card mb-3 bg-light">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Precio unitario:</span>
+                                    <span>${{ "%.2f"|format(evento.precio) }}</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Cantidad:</span>
+                                    <span id="cantidadMuestra">0</span>
+                                </div>
+                                <hr class="my-2">
+                                <div class="d-flex justify-content-between">
+                                    <strong>Total:</strong>
+                                    <strong id="totalPrecio">$0.00</strong>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success btn-lg w-100">
+                            💳 Comprar Ahora
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
+<style>
+.mapa-asientos-container {
+    overflow-x: auto;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.mapa-asientos {
+    min-width: 400px;
+}
+
+.fila-asientos {
+    margin-bottom: 12px;
+}
+
+.letra-fila {
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+}
+
+.asientos-row {
+    justify-content: center;
+}
+
+.asiento {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+.numero-asiento {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-weight: 700;
+}
+
+.asiento.disponible {
+    background-color: #28a745;
+    color: white;
+    border-color: #20c997;
+}
+
+.asiento.disponible:hover {
+    transform: scale(1.15);
+    background-color: #20c997;
+}
+
+.asiento.ocupado {
+    background-color: #dc3545;
+    color: white;
+    border-color: #c82333;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.asiento.seleccionado {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+    transform: scale(1.15);
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.pantalla {
+    background: linear-gradient(to right, #333, #666, #333);
+    color: white;
+    padding: 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+</style>
+
 <script>
-function actualizarTotal() {
-    const cantidad = parseInt(document.getElementById('cantidad').value) || 1;
-    const precioUnitario = {{ evento.precio }};
+const precioUnitario = {{ evento.precio }};
+let asientosSeleccionados = new Set();
+
+function toggleAsiento(btn) {
+    const asiento = btn.dataset.asiento;
+    
+    // Si ya está seleccionado, deseleccionar
+    if (btn.classList.contains('seleccionado')) {
+        btn.classList.remove('seleccionado');
+        btn.classList.add('disponible');
+        asientosSeleccionados.delete(asiento);
+        console.log('❌ Deseleccionado:', asiento);
+    } else {
+        // Si está disponible, seleccionar
+        btn.classList.remove('disponible');
+        btn.classList.add('seleccionado');
+        asientosSeleccionados.add(asiento);
+        console.log('✅ Seleccionado:', asiento);
+    }
+    
+    actualizarResumen();
+}
+
+function actualizarResumen() {
+    const cantidad = asientosSeleccionados.size;
     const total = cantidad * precioUnitario;
     
+    // Actualizar cantidad y total
     document.getElementById('cantidadMuestra').textContent = cantidad;
     document.getElementById('totalPrecio').textContent = '$' + total.toFixed(2);
+    
+    // Generar campos ocultos para cada asiento
+    const contenedorAsientos = document.getElementById('asientosContainer');
+    contenedorAsientos.innerHTML = '';
+    
+    const asientosOrdenados = Array.from(asientosSeleccionados).sort();
+    for (const asiento of asientosOrdenados) {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'asientos';
+        input.value = asiento;
+        contenedorAsientos.appendChild(input);
+    }
+    
+    // Mostrar asientos seleccionados
+    const contenedor = document.getElementById('asientosSeleccionados');
+    if (cantidad === 0) {
+        contenedor.innerHTML = '<span class="text-muted">Ninguno seleccionado</span>';
+    } else {
+        contenedor.innerHTML = asientosOrdenados
+            .map(a => `<span class="badge bg-primary">${a}</span>`)
+            .join('');
+    }
 }
+
+// Inicializar
+document.addEventListener('DOMContentLoaded', function() {
+    actualizarResumen();
+});
 </script>
+
 {% endblock %}

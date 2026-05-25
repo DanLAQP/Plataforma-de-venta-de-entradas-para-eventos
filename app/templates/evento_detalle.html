@@ -40,6 +40,7 @@
             
             {% if evento.entradas_disponibles > 0 %}
                 <div class="d-grid gap-2 d-sm-flex">
+                    <a href="/asientos/{{ evento.id }}" class="btn btn-info btn-lg">🗺️ Ver Mapa de Asientos</a>
                     <a href="/comprar/{{ evento.id }}" class="btn btn-success btn-lg">🎟️ Comprar Entrada</a>
                 </div>
             {% else %}

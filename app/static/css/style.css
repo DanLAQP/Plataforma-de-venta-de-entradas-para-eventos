@@ -127,6 +127,113 @@ footer {
     .container {
         padding: 10px;
     }
+    
+    .asiento {
+        width: 25px;
+        height: 25px;
+        font-size: 9px;
+    }
+    
+    .mapa-asientos-container {
+        padding: 15px;
+    }
+    
+    .pantalla {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* =============== ESTILOS MAPA DE ASIENTOS =============== */
+
+.mapa-asientos-container {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mapa-asientos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.pantalla {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(90deg, #333 0%, #444 50%, #333 100%);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+.fila-asientos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 5px 0;
+}
+
+.letra-fila {
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    font-size: 12px;
+}
+
+.asientos {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.asiento {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.asiento.disponible {
+    background-color: #28a745;
+    color: white;
+    border-color: #1e7e34;
+    box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+}
+
+.asiento.disponible:hover {
+    background-color: #218838;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.5);
+}
+
+.asiento.ocupado {
+    background-color: #dc3545;
+    color: white;
+    border-color: #bd2130;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.asiento.ocupado:hover {
+    opacity: 0.8;
 }
 
 /* Badges */

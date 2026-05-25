@@ -5,7 +5,7 @@
     "fecha": "2026-06-15",
     "ubicacion": "Estadio Nacional",
     "precio": 45.0,
-    "entradas_disponibles": 498,
+    "entradas_disponibles": 138,
     "imagen": "https://gladyspalmera.com/wp-content/uploads/2021/11/festival.jpg",
     "descripcion": "Gran festival de música en vivo con los mejores artistas del momento. Disfruta de un evento increíble con buena comida, bebidas y entretenimiento."
   },
@@ -15,7 +15,7 @@
     "fecha": "2026-07-20",
     "ubicacion": "Centro de Convenciones",
     "precio": 25.0,
-    "entradas_disponibles": 200,
+    "entradas_disponibles": 150,
     "imagen": "https://www.cuc.edu.co/wp-content/uploads/2022/07/DSC00353-1-1.jpg",
     "descripcion": "Únete a expertos en tecnología para aprender sobre las últimas tendencias en desarrollo web, AI y cloud computing."
   },
@@ -25,7 +25,7 @@
     "fecha": "2026-08-10",
     "ubicacion": "Anfiteatro Municipal",
     "precio": 55.0,
-    "entradas_disponibles": 300,
+    "entradas_disponibles": 150,
     "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNwsHNSWIKhUu27ZBNtgVyoETnRJgX2XTgxg&s",
     "descripcion": "Vive la energía del rock en vivo con bandas nacionales e internacionales. Una noche memorable que no puedes perder."
   },
@@ -35,7 +35,7 @@
     "fecha": "2026-09-05",
     "ubicacion": "Museo de Arte Moderno",
     "precio": 15.0,
-    "entradas_disponibles": 150,
+    "entradas_disponibles": 149,
     "imagen": "https://thebestofdr.do/wp-content/uploads/2024/06/0a29d0ef57ced3a7c1d1ed4eda5e2ff6_XL.jpeg",
     "descripcion": "Explora las obras maestras del arte contemporáneo de artistas locales e internacionales."
   }

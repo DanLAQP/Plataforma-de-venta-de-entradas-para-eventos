@@ -12,41 +12,51 @@
             </div>
             
             {% if compras %}
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead class="table-dark">
-                            <tr>
-                                <th>#</th>
-                                <th>Evento</th>
-                                <th>Nombre</th>
-                                <th>Correo</th>
-                                <th>Cantidad</th>
-                                <th>Total</th>
-                                <th>Fecha</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for compra in compras %}
-                            <tr>
-                                <td>{{ compra.id }}</td>
-                                <td>{{ compra.evento_nombre }}</td>
-                                <td>{{ compra.nombre }}</td>
-                                <td>{{ compra.correo }}</td>
-                                <td><span class="badge bg-primary">{{ compra.cantidad }}</span></td>
-                                <td><strong>${{ "%.2f"|format(compra.total) }}</strong></td>
-                                <td><small>{{ compra.fecha_compra }}</small></td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                {% for compra in compras %}
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h5 class="mb-0">{{ compra.evento_nombre }}</h5>
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <small>{{ compra.fecha_compra }}</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><strong>Comprador:</strong> {{ compra.nombre }}</p>
+                                <p><strong>Correo:</strong> {{ compra.correo }}</p>
+                                <p><strong>Cantidad:</strong> <span class="badge bg-info">{{ compra.cantidad }}</span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><strong>Asientos:</strong></p>
+                                <div>
+                                    {% for asiento in compra.asientos %}
+                                        <span class="badge bg-success">{{ asiento }}</span>
+                                    {% endfor %}
+                                </div>
+                                <p class="mt-3"><strong>Total:</strong> ${{ "%.2f"|format(compra.total) }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-light">
+                        <a href="/descargar-entrada/{{ compra.id }}" class="btn btn-sm btn-primary">
+                            📥 Descargar Entrada PDF
+                        </a>
+                        <small class="text-muted">ID: {{ compra.codigo_qr }}</small>
+                    </div>
                 </div>
+                {% endfor %}
                 
                 <div class="card mt-4">
                     <div class="card-body">
-                        <h5 class="card-title">Resumen</h5>
+                        <h5 class="card-title">Resumen General</h5>
                         <p class="card-text">
-                            <strong>Total de compras:</strong> {{ compras|length }}<br>
-                            <strong>Monto total gastado:</strong> ${{ "%.2f"|format(compras|sum(attribute='total')) }}
+                            <strong>Total de compras realizadas:</strong> {{ compras|length }}<br>
+                            <strong>Monto total invertido:</strong> <span class="text-success">${{ "%.2f"|format(compras|sum(attribute='total')) }}</span>
                         </p>
                     </div>
                 </div>
@@ -58,7 +68,7 @@
             {% endif %}
             
             <div class="mt-4">
-                <a href="/" class="btn btn-outline-primary">Ir a eventos</a>
+                <a href="/" class="btn btn-outline-primary">← Ir a eventos</a>
             </div>
         </div>
     </div>

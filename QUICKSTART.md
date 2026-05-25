@@ -1,23 +1,28 @@
-# 🚀 INICIO RÁPIDO - EventosPlatforma
+# 🚀 INICIO RÁPIDO - EventosPlatforma v2.0
 
 ## ⚡ Paso 1: Instalar dependencias
 
-Abre la terminal/PowerShell en la carpeta del proyecto y ejecuta:
+Abre la terminal/PowerShell en la carpeta del proyecto:
 
 ```bash
 pip install -r requirements.txt
 ```
 
+### Dependencias que se instalarán:
+- Flask (servidor web)
+- qrcode (generación de códigos QR)
+- Pillow (procesamiento de imágenes)
+- ReportLab (generación de PDFs)
+
 ## 🎬 Paso 2: Ejecutar la aplicación
 
 ### Opción 1: Windows (Recomendado)
-Haz doble clic en `run.bat` o ejecuta en PowerShell:
+Haz doble clic en `run.bat` o ejecuta:
 ```bash
 python app.py
 ```
 
 ### Opción 2: macOS/Linux
-Ejecuta en terminal:
 ```bash
 bash run.sh
 ```
@@ -37,118 +42,168 @@ Abre tu navegador en:
 http://localhost:5000/
 ```
 
+## 🎫 Flujo de Prueba Recomendado
+
+### 1. Ver Eventos
+Accede a `http://localhost:5000/` y observa los eventos disponibles.
+
+### 2. Ver Mapa de Asientos
+Haz clic en "Ver Mapa de Asientos" para visualizar:
+- Pantalla/Escenario
+- Asientos disponibles (verde)
+- Asientos ocupados (rojo)
+- Estadísticas de ocupación
+
+### 3. Comprar Entrada
+Haz clic en "Comprar Entrada" y completa:
+- Nombre
+- Correo electrónico
+- Cantidad de entradas
+
+### 4. Descargar PDF
+En la página de confirmación:
+- Verás tus asientos asignados
+- Podrás descargar tu entrada en PDF con código QR
+
+### 5. Ver Historial
+En la sección "Historial":
+- Ve todas tus compras
+- Revisa los asientos asignados
+- Descarga PDFs de entradas anteriores
+
 ## 📋 Rutas principales
 
 | Ruta | Descripción |
 |------|-------------|
 | `/` | Página principal - Ver todos los eventos |
-| `/evento/1` | Detalle del evento con ID 1 |
-| `/comprar/1` | Formulario para comprar entrada del evento 1 |
-| `/historial` | Ver todas las compras realizadas |
+| `/evento/1` | Detalle del evento |
+| `/asientos/1` | Mapa de asientos (⭐ NUEVO) |
+| `/comprar/1` | Formulario para comprar entrada |
+| `/descargar-entrada/1` | Descargar entrada PDF (⭐ NUEVO) |
+| `/historial` | Ver todas las compras |
+
+## 📊 Datos Incluidos
+
+La aplicación viene con 4 eventos de ejemplo:
+1. **Festival de Música 2026** - $45 por entrada
+2. **Conferencia de Tecnología** - $25 por entrada
+3. **Concierto de Rock** - $55 por entrada
+4. **Expo de Arte Contemporáneo** - $15 por entrada
 
 ## 📝 Agregar nuevos eventos
 
-Ejecuta el script interactivo en la terminal:
+Ejecuta el script interactivo:
 
 ```bash
 python add_event.py
 ```
 
-Te pedirá información sobre el evento y lo añadirá automáticamente.
+Te pedirá:
+- Nombre del evento
+- Fecha (YYYY-MM-DD)
+- Ubicación
+- Precio por entrada
+- Cantidad de entradas
+- URL de imagen (opcional)
+- Descripción
 
-## 📊 Datos
+## 📥 Descargar Entradas
 
-Los datos se guardan automáticamente en archivos JSON:
-- **eventos.json** - Contiene todos los eventos
-- **compras.json** - Contiene todas las compras realizadas
+Las entradas descargables incluyen:
+- Nombre del evento y fecha
+- Datos del comprador
+- Asientos asignados
+- Código QR único
+- Código de referencia
 
-Puedes editarlos directamente o usar el script `add_event.py`
-
-## ✨ Características del MVP
-
-✅ Ver lista de eventos con:
-  - Nombre
-  - Fecha
-  - Ubicación
-  - Precio
-  - Imagen
-  - Botón "Comprar Entrada"
-
-✅ Ver detalles del evento:
-  - Descripción completa
-  - Entradas disponibles
-  - Precio
-  - Opción de compra
-
-✅ Comprar entrada con:
-  - Formulario simple (nombre, correo, cantidad)
-  - Validación de datos
-  - Reducción automática de stock
-
-✅ Historial de compras:
-  - Tabla con todas las compras
-  - Resumen de gastos totales
-
-✅ Interfaz moderna:
-  - Diseño responsive con Bootstrap
-  - Estilos personalizados
-  - Animaciones suaves
-  - Mejoras de UX con JavaScript
-
-## 🛑 Detener la aplicación
-
-Presiona `Ctrl+C` en la terminal
-
-## ❓ Solución de problemas
-
-### "python: command not found"
-Python no está instalado. Descárgalo desde https://www.python.org/downloads/
-
-### "No module named 'flask'"
-Asegúrate de haber instalado las dependencias:
-```bash
-pip install -r requirements.txt
+Los PDFs se guardan como:
+```
+entrada_[NombreEvento].pdf
 ```
 
-### Error "Port 5000 already in use"
-El puerto 5000 está ocupado. Cambia el puerto en `app.py`:
+## 📱 Características de la v2.0
+
+### Códigos QR
+```
+ENTRADA-{id_compra}-{id_evento}
+```
+
+### Mapa de Asientos
+- Grilla: 10 filas × 15 columnas = 150 asientos
+- Colores: Verde (disponible), Rojo (ocupado)
+- Asignación automática al comprar
+
+### PDFs Descargables
+- Información profesional
+- Código QR integrado
+- Asientos asignados
+- Código único de entrada
+
+## 🔧 Solución de problemas
+
+### Error: "No module named 'qrcode'"
+```bash
+pip install qrcode[pil] pillow reportlab
+```
+
+### Error: "Port 5000 already in use"
+Cambia el puerto en `app.py`:
 ```python
 app.run(debug=True, port=5001)  # Usa otro puerto
 ```
 
-### Los datos no se guardan
-Verifica que las carpetas `data/`, `app/templates/` y `app/static/` existan
+### Los PDFs no se descargan
+- Verifica permisos de escritura en la carpeta `app/`
+- La carpeta `app/temp/` se crea automáticamente
 
-## 📚 Estructura de archivos
+### El mapa de asientos no se ve
+- Limpia caché: `Ctrl+Shift+Delete`
+- Recarga la página: `Ctrl+F5`
+
+## 📁 Estructura de archivos
 
 ```
-├── app.py                    # Backend (Flask)
-├── add_event.py             # Script para agregar eventos
-├── requirements.txt         # Dependencias
-├── run.bat / run.sh         # Scripts de inicio
-├── README.md                # Documentación
+app/
+├── app.py              ← Inicio aquí
+├── add_event.py
+├── requirements.txt    ← Instala primero
+├── run.bat / run.sh    ← Ejecuta la app
 ├── app/
-│   ├── templates/           # Plantillas HTML
-│   └── static/              # CSS y JavaScript
+│   ├── templates/      ← Páginas HTML
+│   ├── static/         ← CSS y JavaScript
+│   └── utils.py        ← QR, PDF, asientos
 └── data/
-    ├── eventos.json         # Base de datos de eventos
-    └── compras.json         # Registro de compras
+    ├── eventos.json
+    └── compras.json
 ```
 
 ## 🎯 Próximos pasos
 
-Después de tener el MVP funcionando, puedes:
+1. **Personaliza eventos**: Usa `python add_event.py`
+2. **Modifica estilos**: Edita `app/static/css/style.css`
+3. **Mejora JavaScript**: Edita `app/static/js/script.js`
+4. **Prueba la API**: Accede a `/api/asientos/1`
+5. **Sube a producción**: Usa Heroku, PythonAnywhere, etc.
 
-1. **Agregar más eventos** usando `python add_event.py`
-2. **Personalizar estilos** en `app/static/css/style.css`
-3. **Mejorar interactividad** en `app/static/js/script.js`
-4. **Agregar validación email** en el formulario
-5. **Implementar autenticación** de usuarios
-6. **Integrar pasarela de pagos** (Stripe, PayPal)
-7. **Cambiar a base de datos real** (PostgreSQL, MySQL)
+## 📚 Recursos Adicionales
+
+- [README.md](README.md) - Documentación completa
+- [CHANGELOG.md](CHANGELOG.md) - Historial de cambios
+- [Flask Documentation](https://flask.palletsprojects.com/)
+- [QRCode Library](https://github.com/lincolnloop/python-qrcode)
+- [ReportLab](https://www.reportlab.com/docs/reportlab-userguide.pdf)
+
+## 🆘 Necesitas ayuda?
+
+1. Revisa el archivo [README.md](README.md)
+2. Consulta el [CHANGELOG.md](CHANGELOG.md)
+3. Verifica los logs en la terminal
+4. Prueba con `python app.py` en modo debug
 
 ---
 
 ¡Listo! 🎉 Tu plataforma de venta de entradas está lista para usar.
 
-¿Necesitas ayuda? Revisa el archivo README.md para más detalles.
+**Versión:** 2.0.0
+**Última actualización:** 2026-05-24
+

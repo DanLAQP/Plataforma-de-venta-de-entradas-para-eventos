@@ -1,0 +1,223 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║                    🎫 BIENVENIDO A EVENTOSPLATFORMA v2.0                   ║
+║                                                                            ║
+║                    Plataforma Moderna de Venta de Entradas                 ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+¡Gracias por usar EventosPlatforma! 🎉
+
+Tu aplicación ha sido completamente actualizada con nuevas características
+emocionantes. Aquí te mostramos qué hay de nuevo:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⭐ NUEVAS CARACTERÍSTICAS (v2.0)
+
+  🎟️  CÓDIGOS QR
+      • Se generan automáticamente en cada compra
+      • Formato único: ENTRADA-{id}-{evento_id}
+      • Incluidos en PDFs descargables
+
+  🗺️  MAPA DE ASIENTOS INTERACTIVO
+      • Visualización de 150 asientos (10x15)
+      • Verde = Disponible, Rojo = Ocupado
+      • Estadísticas de ocupación en tiempo real
+      • Asignación automática al comprar
+
+  📥 DESCARGAR ENTRADAS EN PDF
+      • Documento profesional y atractivo
+      • Incluye: evento, comprador, asientos, código QR
+      • Descargable desde confirmación e historial
+      • Formato: entrada_[NombreEvento].pdf
+
+  📊 API REST MEJORADA
+      • Nuevo endpoint: /api/asientos/<evento_id>
+      • Obtén datos en JSON para integración externa
+      • Perfecto para aplicaciones móviles
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📦 INSTALACIÓN RÁPIDA
+
+  1. Instalar dependencias:
+     
+     pip install -r requirements.txt
+     
+     O usar el script automático:
+     
+     python install.py
+
+  2. Ejecutar la aplicación:
+     
+     python app.py
+     
+     O en Windows (doble clic):
+     
+     run.bat
+
+  3. Abrir en navegador:
+     
+     http://localhost:5000/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 PRUEBA LA APLICACIÓN
+
+  Recomendamos seguir este flujo:
+
+  1️⃣  Ve a la página principal
+      • Ver listado de eventos disponibles
+
+  2️⃣  Haz clic en un evento
+      • Mira los detalles y descripción
+
+  3️⃣  Haz clic en "Ver Mapa de Asientos"
+      • Visualiza la grilla interactiva
+      • Observa asientos disponibles (verdes)
+
+  4️⃣  Regresa y haz clic en "Comprar Entrada"
+      • Completa nombre, correo, cantidad
+      • Compra será procesada
+
+  5️⃣  En la confirmación
+      • Verás tus asientos asignados
+      • Descarga tu entrada en PDF
+
+  6️⃣  Ve al "Historial"
+      • Mira todas tus compras
+      • Descarga PDFs cuando quieras
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 DOCUMENTACIÓN
+
+  • README.md          - Documentación completa del proyecto
+  • QUICKSTART.md      - Guía rápida de inicio
+  • CHANGELOG.md       - Historial de cambios y mejoras
+  • RESUMEN_MEJORAS.txt - Resumen técnico de cambios
+  • verify.py          - Script para verificar la instalación
+  • install.py         - Script para instalar automáticamente
+  • cleanup.py         - Script para limpiar archivos temporales
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 SCRIPTS ÚTILES
+
+  Verificar la instalación:
+  $ python verify.py
+
+  Instalar automáticamente:
+  $ python install.py
+
+  Agregar nuevos eventos:
+  $ python add_event.py
+
+  Limpiar archivos temporales:
+  $ python cleanup.py
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 ESTRUCTURA DEL PROYECTO
+
+  Plataforma-de-venta-de-entradas-para-eventos/
+  ├── app.py                    ← Aplicación principal
+  ├── app/
+  │   ├── utils.py             ← QR, PDF, asientos (NUEVO)
+  │   ├── templates/           ← Páginas HTML
+  │   └── static/              ← CSS y JavaScript
+  ├── data/
+  │   ├── eventos.json         ← Eventos
+  │   └── compras.json         ← Compras
+  ├── requirements.txt         ← Dependencias
+  └── ...otros archivos        ← Documentación y scripts
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 NUEVAS RUTAS DISPONIBLES
+
+  GET  /                              - Página principal
+  GET  /evento/<id>                   - Detalle del evento
+  GET  /asientos/<id>                 - Mapa de asientos ✨
+  POST /comprar/<id>                  - Procesar compra
+  GET  /descargar-entrada/<id>        - Descargar PDF ✨
+  GET  /historial                     - Historial de compras
+  GET  /api/evento/<id>               - API de evento
+  GET  /api/asientos/<id>             - API de asientos ✨
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 TIPS Y TRUCOS
+
+  • Los códigos QR se generan automáticamente
+  • Los asientos se asignan aleatoriamente en orden
+  • Los PDFs se pueden descargar múltiples veces
+  • Los datos se guardan en archivos JSON
+  • Limpia archivos temporales con: python cleanup.py
+  • Verifica la instalación con: python verify.py
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔐 SEGURIDAD (Para Producción)
+
+  ⚠️  En desarrollo (localhost) está seguro
+  
+  Antes de publicar en línea, implementa:
+  • HTTPS obligatorio
+  • Autenticación de usuarios
+  • Validación de correos
+  • Rate limiting
+  • CSRF protection
+  • Pasarela de pagos real
+  • Base de datos segura
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🆘 SOLUCIÓN DE PROBLEMAS
+
+  "No module named 'qrcode'"
+  → pip install -r requirements.txt
+
+  "Port 5000 already in use"
+  → Cambia el puerto en app.py
+
+  "Template not found"
+  → Verifica que la carpeta app/templates/ exista
+
+  Los PDFs no se descargan
+  → Verifica permisos en la carpeta app/
+
+  El mapa de asientos no se ve
+  → Limpia caché: Ctrl+Shift+Delete
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📞 SOPORTE Y CONTACTO
+
+  • Revisa el archivo README.md
+  • Consulta QUICKSTART.md para inicio rápido
+  • Lee CHANGELOG.md para ver cambios
+  • Ejecuta verify.py para diagnosticar
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎉 ¡LISTO PARA USAR!
+
+  Tu plataforma de venta de entradas está 100% funcional.
+  
+  Sigue estos pasos para empezar:
+  
+  1. pip install -r requirements.txt
+  2. python app.py
+  3. Abre http://localhost:5000/ en tu navegador
+  4. ¡Disfruta!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Versión: 2.0.0
+Última actualización: 2026-05-24
+Licencia: MIT
+
+¡Gracias por usar EventosPlatforma! 🚀
+
