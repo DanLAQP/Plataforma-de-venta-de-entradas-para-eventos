@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Compra Exitosa - EventosPlatforma{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="alert alert-success" role="alert">
+                <div class="text-center">
+                    <h2 class="alert-heading mb-3">✓ ¡Compra Exitosa!</h2>
+                    <p>Tu compra ha sido procesada correctamente.</p>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">Detalles de tu Compra</h5>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-5">Evento:</dt>
+                        <dd class="col-sm-7">{{ compra.evento_nombre }}</dd>
+                        
+                        <dt class="col-sm-5">Nombre:</dt>
+                        <dd class="col-sm-7">{{ compra.nombre }}</dd>
+                        
+                        <dt class="col-sm-5">Correo:</dt>
+                        <dd class="col-sm-7">{{ compra.correo }}</dd>
+                        
+                        <dt class="col-sm-5">Cantidad:</dt>
+                        <dd class="col-sm-7">{{ compra.cantidad }} entrada(s)</dd>
+                        
+                        <dt class="col-sm-5">Precio unitario:</dt>
+                        <dd class="col-sm-7">${{ "%.2f"|format(compra.precio_unitario) }}</dd>
+                        
+                        <dt class="col-sm-5">Total:</dt>
+                        <dd class="col-sm-7"><strong>${{ "%.2f"|format(compra.total) }}</strong></dd>
+                        
+                        <dt class="col-sm-5">Fecha de compra:</dt>
+                        <dd class="col-sm-7">{{ compra.fecha_compra }}</dd>
+                    </dl>
+                </div>
+            </div>
+            
+            <div class="alert alert-info">
+                <p class="mb-0">📧 Se ha enviado una confirmación a <strong>{{ compra.correo }}</strong></p>
+            </div>
+            
+            <div class="d-grid gap-2">
+                <a href="/" class="btn btn-primary btn-lg">Ir a la página principal</a>
+                <a href="/historial" class="btn btn-outline-secondary">Ver mi historial</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

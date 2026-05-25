@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}{{ evento.nombre }} - EventosPlatforma{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="mb-3">
+                <a href="/" class="btn btn-outline-secondary btn-sm">&larr; Volver a eventos</a>
+            </div>
+            
+            <img src="{{ evento.imagen }}" alt="{{ evento.nombre }}" class="img-fluid rounded mb-4" style="max-height: 400px; object-fit: cover; width: 100%;">
+            
+            <h1 class="mb-3">{{ evento.nombre }}</h1>
+            
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <p class="text-muted">
+                        <strong>📅 Fecha:</strong> {{ evento.fecha }}<br>
+                        <strong>📍 Ubicación:</strong> {{ evento.ubicacion }}<br>
+                        <strong>💵 Precio por entrada:</strong> ${{ "%.2f"|format(evento.precio) }}
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    {% if evento.entradas_disponibles > 0 %}
+                        <p class="text-success"><strong>✓ {{ evento.entradas_disponibles }} entradas disponibles</strong></p>
+                    {% else %}
+                        <p class="text-danger"><strong>✗ Agotadas</strong></p>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Descripción del Evento</h5>
+                    <p class="card-text">{{ evento.descripcion }}</p>
+                </div>
+            </div>
+            
+            {% if evento.entradas_disponibles > 0 %}
+                <div class="d-grid gap-2 d-sm-flex">
+                    <a href="/comprar/{{ evento.id }}" class="btn btn-success btn-lg">🎟️ Comprar Entrada</a>
+                </div>
+            {% else %}
+                <div class="alert alert-warning">
+                    Las entradas para este evento están agotadas.
+                </div>
+            {% endif %}
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card sticky-top" style="top: 20px;">
+                <div class="card-body">
+                    <h5 class="card-title">Resumen</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>Evento:</strong> {{ evento.nombre }}</li>
+                        <li class="mb-2"><strong>Fecha:</strong> {{ evento.fecha }}</li>
+                        <li class="mb-2"><strong>Precio:</strong> ${{ "%.2f"|format(evento.precio) }}</li>
+                        <li class="mb-2">
+                            <strong>Disponibilidad:</strong>
+                            {% if evento.entradas_disponibles > 0 %}
+                                <span class="badge bg-success">Disponible</span>
+                            {% else %}
+                                <span class="badge bg-danger">Agotado</span>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

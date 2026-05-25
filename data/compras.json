@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "evento_id": 1,
+    "evento_nombre": "Festival de Música 2026",
+    "nombre": "Luis Daniel",
+    "correo": "laguero@unsa.edu.pe",
+    "cantidad": 2,
+    "precio_unitario": 45.0,
+    "total": 90.0,
+    "fecha_compra": "2026-05-24 22:08:38"
+  }
+]

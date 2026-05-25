@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Eventos - EventosPlatforma{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h1 class="display-4">Eventos Disponibles</h1>
+            <p class="lead text-muted">Descubre y compra entradas para los mejores eventos</p>
+        </div>
+    </div>
+
+    {% if eventos %}
+        <div class="row">
+            {% for evento in eventos %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card evento-card h-100">
+                    <img src="{{ evento.imagen }}" class="card-img-top" alt="{{ evento.nombre }}" style="height: 250px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ evento.nombre }}</h5>
+                        <p class="card-text text-muted small">
+                            📅 {{ evento.fecha }}<br>
+                            📍 {{ evento.ubicacion }}<br>
+                            💵 ${{ "%.2f"|format(evento.precio) }}
+                        </p>
+                        <p class="card-text">
+                            <small class="badge bg-info">{{ evento.entradas_disponibles }} entradas disponibles</small>
+                        </p>
+                    </div>
+                    <div class="card-footer bg-white border-top">
+                        <a href="/evento/{{ evento.id }}" class="btn btn-primary btn-sm">Ver Detalles</a>
+                        <a href="/comprar/{{ evento.id }}" class="btn btn-success btn-sm">Comprar Entrada</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading">No hay eventos disponibles</h4>
+            <p>Por el momento no tenemos eventos programados.</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
