@@ -1,4 +1,4 @@
-/* Estilos personalizados para la plataforma */
+/* Estilos personalizados para la plataforma de conferencias académicas */
 
 :root {
     --primary-color: #007bff;
@@ -6,6 +6,14 @@
     --danger-color: #dc3545;
     --dark-color: #343a40;
     --light-color: #f8f9fa;
+    
+    /* Colores de zonas */
+    --zona-vip: #1976d2;
+    --zona-vip-light: #bbdefb;
+    --zona-preferencial: #388e3c;
+    --zona-preferencial-light: #c8e6c9;
+    --zona-general: #f57f17;
+    --zona-general-light: #fff9c4;
 }
 
 body {
@@ -21,6 +29,7 @@ main {
 .navbar-brand {
     font-weight: bold;
     font-size: 1.3rem;
+    color: var(--primary-color);
 }
 
 /* Cards de eventos */
@@ -28,6 +37,8 @@ main {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .evento-card:hover {
@@ -37,6 +48,8 @@ main {
 
 .evento-card .card-img-top {
     border-radius: 0;
+    height: 250px;
+    object-fit: cover;
 }
 
 /* Botones */
@@ -118,6 +131,206 @@ footer {
     border-top: 1px solid #ddd;
 }
 
+/* =============== ESTILOS FILTRO DE MESES =============== */
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+/* =============== ESTILOS ZONAS DE CONFERENCIA =============== */
+.zona-color {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    border: 2px solid #999;
+}
+
+.zona-vip {
+    background-color: var(--zona-vip-light);
+    border-color: var(--zona-vip) !important;
+}
+
+.zona-preferencial {
+    background-color: var(--zona-preferencial-light);
+    border-color: var(--zona-preferencial) !important;
+}
+
+.zona-general {
+    background-color: var(--zona-general-light);
+    border-color: var(--zona-general) !important;
+}
+
+/* =============== ESTILOS MAPA DE ASIENTOS =============== */
+
+.mapa-asientos-container {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    overflow-x: auto;
+}
+
+.mapa-asientos {
+    min-width: 400px;
+}
+
+.fila-asientos {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.letra-fila {
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+    font-size: 14px;
+    user-select: none;
+}
+
+.asientos-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.asiento {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+}
+
+.numero-asiento {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-weight: 700;
+}
+
+/* Estados base de asientos */
+.asiento.disponible {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+    border-color: #4caf50;
+}
+
+.asiento.disponible:hover:not(:disabled) {
+    transform: scale(1.15);
+    background-color: #4caf50;
+    color: white;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
+
+.asiento.ocupado {
+    background-color: #ffebee;
+    color: #b71c1c;
+    border-color: #f44336;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.asiento.seleccionado {
+    background-color: #2196f3;
+    color: white;
+    border-color: #1565c0;
+    transform: scale(1.15);
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.6);
+}
+
+/* Colores específicos por zona */
+.asiento.zona-vip.disponible {
+    background-color: var(--zona-vip-light);
+    color: var(--zona-vip);
+    border-color: var(--zona-vip);
+}
+
+.asiento.zona-vip.disponible:hover:not(:disabled) {
+    background-color: var(--zona-vip);
+    color: white;
+    box-shadow: 0 0 8px rgba(25, 118, 210, 0.5);
+}
+
+.asiento.zona-preferencial.disponible {
+    background-color: var(--zona-preferencial-light);
+    color: var(--zona-preferencial);
+    border-color: var(--zona-preferencial);
+}
+
+.asiento.zona-preferencial.disponible:hover:not(:disabled) {
+    background-color: var(--zona-preferencial);
+    color: white;
+    box-shadow: 0 0 8px rgba(56, 142, 60, 0.5);
+}
+
+.asiento.zona-general.disponible {
+    background-color: var(--zona-general-light);
+    color: var(--zona-general);
+    border-color: var(--zona-general);
+}
+
+.asiento.zona-general.disponible:hover:not(:disabled) {
+    background-color: var(--zona-general);
+    color: white;
+    box-shadow: 0 0 8px rgba(245, 127, 23, 0.5);
+}
+
+.asiento.zona-vip.ocupado {
+    background-color: #ffcccc;
+    color: var(--zona-vip);
+    border-color: var(--zona-vip);
+    opacity: 0.4;
+}
+
+.asiento.zona-preferencial.ocupado {
+    background-color: #ffcccc;
+    color: var(--zona-preferencial);
+    border-color: var(--zona-preferencial);
+    opacity: 0.4;
+}
+
+.asiento.zona-general.ocupado {
+    background-color: #ffcccc;
+    color: var(--zona-general);
+    border-color: var(--zona-general);
+    opacity: 0.4;
+}
+
+/* Pantalla */
+.pantalla {
+    background: linear-gradient(to right, #333, #666, #333);
+    color: white;
+    padding: 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .evento-card {
@@ -142,12 +355,20 @@ footer {
         font-size: 14px;
         padding: 10px;
     }
+    
+    .letra-fila {
+        min-width: 20px;
+        font-size: 12px;
+    }
 }
 
-/* =============== ESTILOS MAPA DE ASIENTOS =============== */
+/* Badge de zona en listado */
+.badge {
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: 4px;
+}
 
-.mapa-asientos-container {
-    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
     border-radius: 10px;
     padding: 30px;
     box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);

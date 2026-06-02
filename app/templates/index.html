@@ -1,35 +1,84 @@
 {% extends "base.html" %}
 
-{% block title %}Eventos - EventosPlatforma{% endblock %}
+{% block title %}Conferencias Académicas - EventosPlatforma{% endblock %}
 
 {% block content %}
 <div class="container py-5">
     <div class="row mb-4">
         <div class="col-md-8">
-            <h1 class="display-4">Eventos Disponibles</h1>
-            <p class="lead text-muted">Descubre y compra entradas para los mejores eventos</p>
+            <h1 class="display-4">🎓 Conferencias Académicas</h1>
+            <p class="lead text-muted">Descubre y compra entradas para nuestras conferencias especializadas</p>
         </div>
     </div>
 
+    <!-- FILTRO POR MESES -->
+    {% if meses_disponibles %}
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h6 class="mb-0">📅 Filtrar por Mes</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex gap-2 flex-wrap">
+                        <a href="/" class="btn {% if not mes_seleccionado %}btn-primary{% else %}btn-outline-primary{% endif %} btn-sm">
+                            Ver Todos
+                        </a>
+                        {% for mes in meses_disponibles %}
+                        <a href="/?mes={{ mes.numero }}" 
+                           class="btn {% if mes.seleccionado %}btn-primary{% else %}btn-outline-primary{% endif %} btn-sm">
+                            {{ mes.nombre }} {{ mes.año }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- LISTADO DE EVENTOS -->
     {% if eventos %}
         <div class="row">
             {% for evento in eventos %}
             <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card evento-card h-100">
+                <div class="card evento-card h-100 shadow-sm">
                     <img src="{{ evento.imagen }}" class="card-img-top" alt="{{ evento.nombre }}" style="height: 250px; object-fit: cover;">
+                    
+                    <!-- Badge de Zona y Estado -->
+                    <div class="position-absolute top-0 end-0 m-2">
+                        <span class="badge bg-success">{{ evento.estado | upper }}</span>
+                    </div>
+                    
                     <div class="card-body">
                         <h5 class="card-title">{{ evento.nombre }}</h5>
-                        <p class="card-text text-muted small">
-                            📅 {{ evento.fecha }}<br>
-                            📍 {{ evento.ubicacion }}<br>
-                            💵 ${{ "%.2f"|format(evento.precio) }}
+                        
+                        <p class="text-muted small mb-2">
+                            <strong>👨‍🏫 Ponente:</strong> {{ evento.ponente }}<br>
                         </p>
-                        <p class="card-text">
-                            <small class="badge bg-info">{{ evento.entradas_disponibles }} entradas disponibles</small>
+                        
+                        <p class="text-muted small">
+                            📅 {{ evento.fecha }} - {{ evento.hora }}<br>
+                            ⏱️ {{ evento.duracion_minutos }} minutos<br>
+                            📍 {{ evento.ubicacion }}
+                        </p>
+                        
+                        <div class="mb-2">
+                            <small class="text-muted">Precios por zona:</small><br>
+                            <small>
+                                🟦 VIP: <strong>${{ "%.2f"|format(evento.zonas.VIP.precio) }}</strong> |
+                                🟩 Preferencial: <strong>${{ "%.2f"|format(evento.zonas.PREFERENCIAL.precio) }}</strong> |
+                                🟨 General: <strong>${{ "%.2f"|format(evento.zonas.GENERAL.precio) }}</strong>
+                            </small>
+                        </div>
+                        
+                        <p class="card-text small text-muted">
+                            {{ evento.descripcion[:100] }}...
                         </p>
                     </div>
+                    
                     <div class="card-footer bg-white border-top">
-                        <a href="/evento/{{ evento.id }}" class="btn btn-primary btn-sm">Ver Detalles</a>
+                        <a href="/evento/{{ evento.id }}" class="btn btn-info btn-sm">Ver Detalles</a>
                         <a href="/comprar/{{ evento.id }}" class="btn btn-success btn-sm">Comprar Entrada</a>
                     </div>
                 </div>
@@ -38,9 +87,24 @@
         </div>
     {% else %}
         <div class="alert alert-info" role="alert">
-            <h4 class="alert-heading">No hay eventos disponibles</h4>
-            <p>Por el momento no tenemos eventos programados.</p>
+            <h4 class="alert-heading">📭 No hay conferencias disponibles</h4>
+            <p>Por el momento no tenemos conferencias programadas en este período. Por favor, intenta con otro mes.</p>
         </div>
     {% endif %}
 </div>
+
+<style>
+    .evento-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .evento-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important;
+    }
+    
+    .card-header {
+        border-radius: 0;
+    }
+</style>
 {% endblock %}

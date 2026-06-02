@@ -95,5 +95,21 @@
     "asientos": [
       "J5"
     ]
+  },
+  {
+    "id": 7,
+    "evento_id": 1,
+    "evento_nombre": "Python Avanzado: Programación Asíncrona",
+    "nombre": "Analy Quispe",
+    "correo": "garletquispebejar@gmail.com",
+    "cantidad": 2,
+    "precio_unitario": 75.0,
+    "total": 150.0,
+    "fecha_compra": "2026-06-01 20:43:36",
+    "codigo_qr": "ENTRADA-7-1",
+    "asientos": [
+      "B10",
+      "B11"
+    ]
   }
 ]

@@ -1,42 +1,166 @@
 [
   {
     "id": 1,
-    "nombre": "Festival de Música 2026",
+    "nombre": "Python Avanzado: Programación Asíncrona",
+    "tipo": "Conferencia Académica",
     "fecha": "2026-06-15",
-    "ubicacion": "Estadio Nacional",
-    "precio": 45.0,
-    "entradas_disponibles": 138,
-    "imagen": "https://gladyspalmera.com/wp-content/uploads/2021/11/festival.jpg",
-    "descripcion": "Gran festival de música en vivo con los mejores artistas del momento. Disfruta de un evento increíble con buena comida, bebidas y entretenimiento."
+    "hora": "09:00",
+    "mes": 6,
+    "año": 2026,
+    "ubicacion": "Auditorio Principal - Universidad",
+    "ponente": "Dr. Juan García López",
+    "descripcion": "Aprende técnicas avanzadas de programación asíncrona en Python, incluyendo asyncio, aiohttp y FastAPI.",
+    "imagen": "https://via.placeholder.com/600x400?text=Python+Asincrono",
+    "duracion_minutos": 120,
+    "capacidad_total": 150,
+    "asientos_vendidos": 12,
+    "zonas": {
+      "VIP": {
+        "nombre": "VIP",
+        "filas": ["A", "B", "C"],
+        "precio": 75.0,
+        "total_asientos": 45,
+        "disponibles": 35
+      },
+      "PREFERENCIAL": {
+        "nombre": "Preferencial",
+        "filas": ["D", "E", "F"],
+        "precio": 50.0,
+        "total_asientos": 45,
+        "disponibles": 45
+      },
+      "GENERAL": {
+        "nombre": "General",
+        "filas": ["G", "H", "I", "J"],
+        "precio": 25.0,
+        "total_asientos": 60,
+        "disponibles": 58
+      }
+    },
+    "estado": "disponible",
+    "fecha_creacion": "2026-01-15T10:30:00"
   },
   {
     "id": 2,
-    "nombre": "Conferencia de Tecnología",
-    "fecha": "2026-07-20",
-    "ubicacion": "Centro de Convenciones",
-    "precio": 25.0,
-    "entradas_disponibles": 150,
-    "imagen": "https://www.cuc.edu.co/wp-content/uploads/2022/07/DSC00353-1-1.jpg",
-    "descripcion": "Únete a expertos en tecnología para aprender sobre las últimas tendencias en desarrollo web, AI y cloud computing."
+    "nombre": "Machine Learning en Producción",
+    "tipo": "Conferencia Académica",
+    "fecha": "2026-06-22",
+    "hora": "14:00",
+    "mes": 6,
+    "año": 2026,
+    "ubicacion": "Auditorio Principal - Universidad",
+    "ponente": "Dra. María Rodríguez Silva",
+    "descripcion": "Descubre cómo desplegar modelos de machine learning en producción de manera escalable y segura.",
+    "imagen": "https://via.placeholder.com/600x400?text=Machine+Learning",
+    "duracion_minutos": 150,
+    "capacidad_total": 150,
+    "asientos_vendidos": 0,
+    "zonas": {
+      "VIP": {
+        "nombre": "VIP",
+        "filas": ["A", "B", "C"],
+        "precio": 75.0,
+        "total_asientos": 45,
+        "disponibles": 45
+      },
+      "PREFERENCIAL": {
+        "nombre": "Preferencial",
+        "filas": ["D", "E", "F"],
+        "precio": 50.0,
+        "total_asientos": 45,
+        "disponibles": 45
+      },
+      "GENERAL": {
+        "nombre": "General",
+        "filas": ["G", "H", "I", "J"],
+        "precio": 25.0,
+        "total_asientos": 60,
+        "disponibles": 60
+      }
+    },
+    "estado": "disponible",
+    "fecha_creacion": "2026-01-20T11:00:00"
   },
   {
     "id": 3,
-    "nombre": "Concierto de Rock",
-    "fecha": "2026-08-10",
-    "ubicacion": "Anfiteatro Municipal",
-    "precio": 55.0,
-    "entradas_disponibles": 150,
-    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNwsHNSWIKhUu27ZBNtgVyoETnRJgX2XTgxg&s",
-    "descripcion": "Vive la energía del rock en vivo con bandas nacionales e internacionales. Una noche memorable que no puedes perder."
+    "nombre": "Seguridad en Aplicaciones Web Modernas",
+    "tipo": "Conferencia Académica",
+    "fecha": "2026-07-10",
+    "hora": "10:00",
+    "mes": 7,
+    "año": 2026,
+    "ubicacion": "Auditorio Principal - Universidad",
+    "ponente": "Ing. Carlos Mendoza Pérez",
+    "descripcion": "Protege tus aplicaciones web contra vulnerabilidades OWASP Top 10 y aprende las mejores prácticas de seguridad.",
+    "imagen": "https://via.placeholder.com/600x400?text=Seguridad+Web",
+    "duracion_minutos": 120,
+    "capacidad_total": 150,
+    "asientos_vendidos": 45,
+    "zonas": {
+      "VIP": {
+        "nombre": "VIP",
+        "filas": ["A", "B", "C"],
+        "precio": 75.0,
+        "total_asientos": 45,
+        "disponibles": 30
+      },
+      "PREFERENCIAL": {
+        "nombre": "Preferencial",
+        "filas": ["D", "E", "F"],
+        "precio": 50.0,
+        "total_asientos": 45,
+        "disponibles": 40
+      },
+      "GENERAL": {
+        "nombre": "General",
+        "filas": ["G", "H", "I", "J"],
+        "precio": 25.0,
+        "total_asientos": 60,
+        "disponibles": 55
+      }
+    },
+    "estado": "disponible",
+    "fecha_creacion": "2026-02-01T09:15:00"
   },
   {
     "id": 4,
-    "nombre": "Expo de Arte Contemporáneo",
-    "fecha": "2026-09-05",
-    "ubicacion": "Museo de Arte Moderno",
-    "precio": 15.0,
-    "entradas_disponibles": 149,
-    "imagen": "https://thebestofdr.do/wp-content/uploads/2024/06/0a29d0ef57ced3a7c1d1ed4eda5e2ff6_XL.jpeg",
-    "descripcion": "Explora las obras maestras del arte contemporáneo de artistas locales e internacionales."
+    "nombre": "Arquitectura de Microservicios con Docker y Kubernetes",
+    "tipo": "Conferencia Académica",
+    "fecha": "2026-07-25",
+    "hora": "09:00",
+    "mes": 7,
+    "año": 2026,
+    "ubicacion": "Auditorio Principal - Universidad",
+    "ponente": "Prof. Alejandro Torres Fuentes",
+    "descripcion": "Aprende a diseñar, construir y desplegar aplicaciones con arquitectura de microservicios usando Docker y Kubernetes.",
+    "imagen": "https://via.placeholder.com/600x400?text=Microservicios",
+    "duracion_minutos": 180,
+    "capacidad_total": 150,
+    "asientos_vendidos": 0,
+    "zonas": {
+      "VIP": {
+        "nombre": "VIP",
+        "filas": ["A", "B", "C"],
+        "precio": 75.0,
+        "total_asientos": 45,
+        "disponibles": 45
+      },
+      "PREFERENCIAL": {
+        "nombre": "Preferencial",
+        "filas": ["D", "E", "F"],
+        "precio": 50.0,
+        "total_asientos": 45,
+        "disponibles": 45
+      },
+      "GENERAL": {
+        "nombre": "General",
+        "filas": ["G", "H", "I", "J"],
+        "precio": 25.0,
+        "total_asientos": 60,
+        "disponibles": 60
+      }
+    },
+    "estado": "disponible",
+    "fecha_creacion": "2026-02-05T14:30:00"
   }
 ]

@@ -8,9 +8,9 @@ echo "===================================="
 echo ""
 
 # Verificar si Python está instalado
-if ! command -v python3 &> /dev/null; then
+if ! command -v py &> /dev/null; then
     echo "ERROR: Python 3 no está instalado"
-    echo "Instálalo con: brew install python3"
+    echo "Instálalo con: brew install py"
     exit 1
 fi
 
@@ -19,7 +19,7 @@ echo "[✓] Python detectado"
 # Crear entorno virtual
 if [ ! -d "venv" ]; then
     echo "[*] Creando entorno virtual..."
-    python3 -m venv venv
+    py -m venv venv
     echo "[✓] Entorno virtual creado"
 else
     echo "[✓] Entorno virtual ya existe"
