@@ -122,6 +122,8 @@ La aplicación estará disponible en `http://localhost:5000/`
 | GET | `/api/compras` | Lista todas las compras (filtrable por `?evento_id=`) |
 | POST | `/api/compras` | Registra una compra: `{ "evento_id", "nombre", "correo", "asientos": [...] }` |
 | GET | `/api/compras/<id>` | Detalle de una compra |
+| PUT | `/api/compras/<id>` | Actualiza nombre/correo/asientos de una compra |
+| DELETE | `/api/compras/<id>` | Cancela (elimina) una compra, liberando sus asientos |
 
 La API responde con códigos de estado HTTP estándar: `200` OK, `201` creado, `400` datos inválidos, `404` recurso no encontrado, `409` conflicto (asiento ya ocupado).
 

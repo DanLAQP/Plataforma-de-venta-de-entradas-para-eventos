@@ -536,14 +536,61 @@ def api_compras():
         compras = [c for c in compras if c.get('evento_id') == evento_id_filtro]
     return jsonify(compras)
 
-@app.route('/api/compras/<int:compra_id>')
+@app.route('/api/compras/<int:compra_id>', methods=['GET', 'PUT', 'DELETE'])
 def api_compra_detalle(compra_id):
-    """Recurso individual de compra"""
+    """Recurso individual de compra: obtener (GET), actualizar (PUT) o cancelar (DELETE)"""
     compras = cargar_compras()
     compra = next((c for c in compras if c['id'] == compra_id), None)
     if not compra:
         return jsonify({'error': 'Compra no encontrada'}), 404
-    return jsonify(compra)
+
+    if request.method == 'GET':
+        return jsonify(compra)
+
+    if request.method == 'PUT':
+        data = request.get_json(silent=True) or {}
+        nombre = data.get('nombre', compra['nombre'])
+        correo = data.get('correo', compra['correo'])
+        asientos_nuevos = data.get('asientos')
+
+        if not (nombre or '').strip() or not (correo or '').strip():
+            return jsonify({'error': 'Por favor completa nombre y correo'}), 400
+
+        if asientos_nuevos is not None:
+            if not isinstance(asientos_nuevos, list) or not asientos_nuevos:
+                return jsonify({'error': 'asientos debe ser una lista con al menos un asiento'}), 400
+            asientos_nuevos = [a.strip() for a in asientos_nuevos if a and a.strip()]
+
+            # Asientos ocupados por OTRAS compras del mismo evento (excluye esta compra)
+            ocupados_otras = set()
+            for c in compras:
+                if c['id'] != compra_id and c.get('evento_id') == compra['evento_id']:
+                    ocupados_otras.update(c.get('asientos', []))
+
+            for asiento in asientos_nuevos:
+                if asiento in ocupados_otras:
+                    return jsonify({'error': f'El asiento {asiento} ya está ocupado. Por favor elige otro.'}), 409
+
+            total = 0.0
+            for asiento in asientos_nuevos:
+                fila = asiento[0]
+                total += obtener_precio_asiento(compra['evento_id'], fila)
+
+            compra['asientos'] = sorted(asientos_nuevos)
+            compra['cantidad'] = len(asientos_nuevos)
+            compra['precio_unitario'] = total / len(asientos_nuevos)
+            compra['total'] = total
+
+        compra['nombre'] = nombre.strip()
+        compra['correo'] = correo.strip()
+
+        guardar_compras(compras)
+        return jsonify(compra)
+
+    # DELETE
+    compras = [c for c in compras if c['id'] != compra_id]
+    guardar_compras(compras)
+    return '', 204
 
 # --- Alias heredados (mantenidos por compatibilidad con versiones previas) ---
 
