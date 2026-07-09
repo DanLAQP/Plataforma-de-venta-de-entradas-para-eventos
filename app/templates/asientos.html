@@ -41,7 +41,32 @@
                 </div>
             </div>
             
-            <!-- Leyenda -->
+            <!-- Leyenda de Zonas -->
+            <div class="mb-4 p-3 bg-light rounded">
+                <h6 class="mb-3">Zonas disponibles y precios:</h6>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="zona-color zona-vip"></span>
+                            <span><strong>Zona VIP</strong> (Filas A, B, C): <strong class="text-primary">${{ "%.2f"|format(evento.zonas.VIP.precio) }}</strong></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="zona-color zona-preferencial"></span>
+                            <span><strong>Zona Preferencial</strong> (Filas D, E, F): <strong class="text-success">${{ "%.2f"|format(evento.zonas.PREFERENCIAL.precio) }}</strong></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="zona-color zona-general"></span>
+                            <span><strong>Zona General</strong> (Filas G, H, I, J): <strong class="text-warning">${{ "%.2f"|format(evento.zonas.GENERAL.precio) }}</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leyenda de Estados -->
             <div class="mb-4 p-3 bg-light rounded">
                 <div class="row">
                     <div class="col-md-6">
@@ -73,8 +98,8 @@
                                 <div class="letra-fila">{{ fila_letra }}</div>
                                 <div class="asientos">
                                     {% for asiento in asientos_fila | sort(attribute='columna') %}
-                                        <div class="asiento {% if asiento.ocupado %}ocupado{% else %}disponible{% endif %}" 
-                                             title="{{ asiento.codigo }} - {% if asiento.ocupado %}Ocupado{% else %}Disponible{% endif %}">
+                                        <div class="asiento zona-{{ asiento.zona | lower }} {% if asiento.ocupado %}ocupado{% else %}disponible{% endif %}"
+                                             title="{{ asiento.codigo }} - {{ asiento.zona }} - ${{ '%.2f'|format(asiento.precio) }} - {% if asiento.ocupado %}Ocupado{% else %}Disponible{% endif %}">
                                             <span>{{ asiento.columna }}</span>
                                         </div>
                                     {% endfor %}

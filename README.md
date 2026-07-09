@@ -98,16 +98,34 @@ La aplicación estará disponible en `http://localhost:5000/`
 
 ### Rutas disponibles
 
+#### Vistas web (HTML)
+
 | Ruta | Descripción |
 |------|-------------|
 | `/` | Página principal (lista de eventos) |
 | `/evento/<id>` | Detalle del evento |
-| `/asientos/<id>` | Mapa de asientos del evento ⭐ NUEVO |
+| `/asientos/<id>` | Mapa de asientos del evento |
 | `/comprar/<id>` | Formulario de compra |
-| `/descargar-entrada/<id>` | Descarga PDF de entrada ⭐ NUEVO |
+| `/descargar-entrada/<id>` | Descarga PDF de entrada |
 | `/historial` | Historial de compras |
-| `/api/evento/<id>` | API JSON del evento |
-| `/api/asientos/<id>` | API JSON del mapa de asientos ⭐ NUEVO |
+
+#### API REST (JSON) ⭐ NUEVO
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| GET | `/api/eventos` | Lista todos los eventos (filtrable por `?mes=&año=`) |
+| POST | `/api/eventos` | Crea un evento nuevo |
+| GET | `/api/eventos/<id>` | Detalle de un evento |
+| PUT | `/api/eventos/<id>` | Actualiza un evento |
+| DELETE | `/api/eventos/<id>` | Elimina un evento |
+| GET | `/api/eventos/<id>/asientos` | Mapa de asientos del evento (estado, zona, precio) |
+| GET | `/api/compras` | Lista todas las compras (filtrable por `?evento_id=`) |
+| POST | `/api/compras` | Registra una compra: `{ "evento_id", "nombre", "correo", "asientos": [...] }` |
+| GET | `/api/compras/<id>` | Detalle de una compra |
+
+La API responde con códigos de estado HTTP estándar: `200` OK, `201` creado, `400` datos inválidos, `404` recurso no encontrado, `409` conflicto (asiento ya ocupado).
+
+`/api/evento/<id>` y `/api/asientos/<id>` se mantienen como alias por compatibilidad con versiones anteriores.
 
 ## Características Nuevas - Detalles
 

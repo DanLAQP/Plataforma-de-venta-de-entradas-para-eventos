@@ -23,11 +23,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Animación de carga de imágenes
     const imagenes = document.querySelectorAll('img');
     imagenes.forEach(img => {
-        img.addEventListener('load', function() {
-            this.style.opacity = '1';
-        });
-        img.style.opacity = '0';
         img.style.transition = 'opacity 0.3s ease';
+        if (img.complete) {
+            img.style.opacity = '1';
+        } else {
+            img.style.opacity = '0';
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+        }
     });
     
     // Tooltip de Bootstrap

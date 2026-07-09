@@ -227,85 +227,96 @@ def evento_detalle(evento_id):
     
     return render_template('evento_detalle.html', evento=evento)
 
+def crear_compra(evento_id, nombre, correo, asientos_seleccionados):
+    """
+    Valida y registra una compra de entradas. Usada tanto por el formulario
+    HTML (/comprar) como por la API REST (POST /api/compras).
+
+    Returns:
+        tuple: (compra, error, status_code). Si error es None, compra
+        contiene el diccionario de la compra creada y status_code es 201.
+        Si error no es None, compra es None y status_code es el código
+        HTTP apropiado (400, 404 o 409).
+    """
+    eventos = cargar_eventos()
+    evento = next((e for e in eventos if e['id'] == evento_id), None)
+
+    if not evento:
+        return None, 'Evento no encontrado', 404
+
+    nombre = (nombre or '').strip()
+    correo = (correo or '').strip()
+    asientos_seleccionados = [a.strip() for a in (asientos_seleccionados or []) if a and a.strip()]
+
+    if not nombre or not correo:
+        return None, 'Por favor completa nombre y correo', 400
+
+    if not asientos_seleccionados:
+        return None, 'Por favor selecciona al menos un asiento', 400
+
+    asientos_ocupados = obtener_asientos_ocupados(evento_id)
+    for asiento in asientos_seleccionados:
+        if asiento in asientos_ocupados:
+            return None, f'El asiento {asiento} ya está ocupado. Por favor elige otro.', 409
+
+    total_compra = 0.0
+    for asiento in asientos_seleccionados:
+        fila = asiento[0]  # Primera letra es la fila
+        precio_asiento = obtener_precio_asiento(evento_id, fila)
+        total_compra += precio_asiento
+
+    compras = cargar_compras()
+    precio_unitario = total_compra / len(asientos_seleccionados) if asientos_seleccionados else 0
+
+    nueva_compra = {
+        'id': len(compras) + 1,
+        'evento_id': evento_id,
+        'evento_nombre': evento['nombre'],
+        'nombre': nombre,
+        'correo': correo,
+        'cantidad': len(asientos_seleccionados),
+        'precio_unitario': precio_unitario,
+        'total': total_compra,
+        'fecha_compra': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'codigo_qr': f"ENTRADA-{len(compras) + 1}-{evento_id}",
+        'asientos': sorted(asientos_seleccionados)
+    }
+    compras.append(nueva_compra)
+    guardar_compras(compras)
+
+    return nueva_compra, None, 201
+
 @app.route('/comprar/<int:evento_id>', methods=['GET', 'POST'])
 def comprar(evento_id):
     """Página de compra de entrada con selección de asientos por zona"""
     eventos = cargar_eventos()
     evento = next((e for e in eventos if e['id'] == evento_id), None)
-    
+
     if not evento:
         return redirect(url_for('index'))
-    
+
     if request.method == 'POST':
         nombre = request.form.get('nombre', '').strip()
         correo = request.form.get('correo', '').strip()
         asientos_seleccionados = request.form.getlist('asientos')
-        
+
         # Si vienen como una lista vacía, intenta obtenerlos del formulario
         if not asientos_seleccionados:
             asientos_str = request.form.get('asientos', '')
             if asientos_str:
                 asientos_seleccionados = asientos_str.split(',')
-        
-        # Limpiar y filtrar asientos vacíos
-        asientos_seleccionados = [a.strip() for a in asientos_seleccionados if a.strip()]
-        
-        # Validaciones
-        if not nombre or not correo:
+
+        compra, error, _status = crear_compra(evento_id, nombre, correo, asientos_seleccionados)
+
+        if error:
             mapa_asientos = generar_mapa_asientos_interactivo(evento_id)
-            return render_template('comprar.html', 
-                                 evento=evento, 
+            return render_template('comprar.html',
+                                 evento=evento,
                                  mapa_asientos=mapa_asientos,
-                                 error='Por favor completa nombre y correo')
-        
-        if not asientos_seleccionados:
-            mapa_asientos = generar_mapa_asientos_interactivo(evento_id)
-            return render_template('comprar.html', 
-                                 evento=evento, 
-                                 mapa_asientos=mapa_asientos,
-                                 error='Por favor selecciona al menos un asiento')
-        
-        # Validar que los asientos seleccionados sean válidos y calcular total
-        asientos_ocupados = obtener_asientos_ocupados(evento_id)
-        total_compra = 0.0
-        
-        for asiento in asientos_seleccionados:
-            if asiento in asientos_ocupados:
-                mapa_asientos = generar_mapa_asientos_interactivo(evento_id)
-                return render_template('comprar.html', 
-                                     evento=evento, 
-                                     mapa_asientos=mapa_asientos,
-                                     error=f'El asiento {asiento} ya está ocupado. Por favor elige otro.')
-            
-            # Obtener fila del asiento para calcular precio por zona
-            fila = asiento[0]  # Primera letra es la fila
-            precio_asiento = obtener_precio_asiento(evento_id, fila)
-            total_compra += precio_asiento
-        
-        # Registrar compra
-        compras = cargar_compras()
-        
-        # Calcular precio unitario promedio
-        precio_unitario = total_compra / len(asientos_seleccionados) if asientos_seleccionados else 0
-        
-        nueva_compra = {
-            'id': len(compras) + 1,
-            'evento_id': evento_id,
-            'evento_nombre': evento['nombre'],
-            'nombre': nombre,
-            'correo': correo,
-            'cantidad': len(asientos_seleccionados),
-            'precio_unitario': precio_unitario,
-            'total': total_compra,
-            'fecha_compra': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-            'codigo_qr': f"ENTRADA-{len(compras) + 1}-{evento_id}",
-            'asientos': sorted(asientos_seleccionados)
-        }
-        compras.append(nueva_compra)
-        guardar_compras(compras)
-        
-        return render_template('compra_exitosa.html', compra=nueva_compra, evento=evento)
-    
+                                 error=error)
+
+        return render_template('compra_exitosa.html', compra=compra, evento=evento)
+
     # GET: Mostrar formulario con mapa de asientos
     mapa_asientos = generar_mapa_asientos_interactivo(evento_id)
     return render_template('comprar.html', evento=evento, mapa_asientos=mapa_asientos)
@@ -366,11 +377,24 @@ def descargar_entrada(compra_id):
     # Descargar archivo
     return send_file(pdf_path, as_attachment=True, download_name=f"entrada_{compra['evento_nombre'].replace(' ', '_')}.pdf")
 
-@app.route('/api/asientos/<int:evento_id>')
-def api_asientos(evento_id):
-    """API para obtener mapa de asientos con estado real, zona y precio"""
+@app.route('/historial')
+def historial():
+    """Página de historial de compras"""
+    compras = cargar_compras()
+    return render_template('historial.html', compras=compras)
+
+# ====================================================================
+# ===================  API REST  ====================================
+# ====================================================================
+# Recursos: /api/eventos, /api/eventos/<id>, /api/eventos/<id>/asientos,
+#           /api/compras, /api/compras/<id>
+# Todas las respuestas son JSON con códigos de estado HTTP estándar.
+# ====================================================================
+
+def construir_respuesta_asientos(evento_id):
+    """Arma el JSON del mapa de asientos (estado, zona y precio) de un evento."""
     mapa_asientos = generar_mapa_asientos_interactivo(evento_id)
-    
+
     asientos_json = [
         {
             'codigo': a['codigo'],
@@ -382,34 +406,156 @@ def api_asientos(evento_id):
         }
         for a in mapa_asientos
     ]
-    
+
     total = len(asientos_json)
     ocupados = sum(1 for a in asientos_json if a['ocupado'])
     disponibles = total - ocupados
-    
-    return jsonify({
+
+    return {
         'evento_id': evento_id,
         'total_asientos': total,
         'ocupados': ocupados,
         'disponibles': disponibles,
         'asientos': asientos_json
-    })
+    }
 
-@app.route('/historial')
-def historial():
-    """Página de historial de compras"""
+@app.route('/api/eventos', methods=['GET', 'POST'])
+def api_eventos():
+    """Colección de eventos: listar (GET) o crear (POST)"""
+    if request.method == 'POST':
+        data = request.get_json(silent=True) or {}
+
+        campos_requeridos = ['nombre', 'tipo', 'fecha', 'hora', 'mes', 'año',
+                              'ubicacion', 'ponente', 'descripcion',
+                              'duracion_minutos', 'capacidad_total', 'zonas']
+        faltantes = [c for c in campos_requeridos if c not in data]
+        if faltantes:
+            return jsonify({'error': f'Campos requeridos faltantes: {", ".join(faltantes)}'}), 400
+
+        eventos = cargar_eventos()
+        nuevo_id = max([e['id'] for e in eventos], default=0) + 1
+
+        zonas = data['zonas']
+        for zona in zonas.values():
+            zona.setdefault('disponibles', zona.get('total_asientos', 0))
+
+        nuevo_evento = {
+            'id': nuevo_id,
+            'nombre': data['nombre'],
+            'tipo': data['tipo'],
+            'fecha': data['fecha'],
+            'hora': data['hora'],
+            'mes': data['mes'],
+            'año': data['año'],
+            'ubicacion': data['ubicacion'],
+            'ponente': data['ponente'],
+            'descripcion': data['descripcion'],
+            'imagen': data.get('imagen', ''),
+            'duracion_minutos': data['duracion_minutos'],
+            'capacidad_total': data['capacidad_total'],
+            'asientos_vendidos': 0,
+            'zonas': zonas,
+            'estado': data.get('estado', 'disponible'),
+            'fecha_creacion': datetime.now().isoformat()
+        }
+        eventos.append(nuevo_evento)
+        guardar_eventos(eventos)
+        return jsonify(nuevo_evento), 201
+
+    # GET: listar eventos, con filtro opcional ?mes=&año=
+    mes = request.args.get('mes', type=int)
+    if mes:
+        año = request.args.get('año', type=int, default=2026)
+        eventos = obtener_eventos_por_mes(mes, año)
+    else:
+        eventos = cargar_eventos()
+    return jsonify(eventos)
+
+@app.route('/api/eventos/<int:evento_id>', methods=['GET', 'PUT', 'DELETE'])
+def api_evento_detalle(evento_id):
+    """Recurso individual de evento: obtener (GET), actualizar (PUT) o eliminar (DELETE)"""
+    eventos = cargar_eventos()
+    evento = next((e for e in eventos if e['id'] == evento_id), None)
+
+    if not evento:
+        return jsonify({'error': 'Evento no encontrado'}), 404
+
+    if request.method == 'GET':
+        return jsonify(evento)
+
+    if request.method == 'PUT':
+        data = request.get_json(silent=True) or {}
+        campos_editables = ['nombre', 'tipo', 'fecha', 'hora', 'mes', 'año',
+                             'ubicacion', 'ponente', 'descripcion', 'imagen',
+                             'duracion_minutos', 'capacidad_total', 'zonas', 'estado']
+        for campo in campos_editables:
+            if campo in data:
+                evento[campo] = data[campo]
+        guardar_eventos(eventos)
+        return jsonify(evento)
+
+    # DELETE
+    eventos = [e for e in eventos if e['id'] != evento_id]
+    guardar_eventos(eventos)
+    return '', 204
+
+@app.route('/api/eventos/<int:evento_id>/asientos')
+def api_evento_asientos(evento_id):
+    """Mapa de asientos de un evento (estado, zona y precio de cada uno)"""
+    eventos = cargar_eventos()
+    if not any(e['id'] == evento_id for e in eventos):
+        return jsonify({'error': 'Evento no encontrado'}), 404
+    return jsonify(construir_respuesta_asientos(evento_id))
+
+@app.route('/api/compras', methods=['GET', 'POST'])
+def api_compras():
+    """Colección de compras: listar (GET, filtrable por ?evento_id=) o crear (POST)"""
+    if request.method == 'POST':
+        data = request.get_json(silent=True) or {}
+
+        if 'evento_id' not in data:
+            return jsonify({'error': 'evento_id es requerido'}), 400
+        try:
+            evento_id = int(data['evento_id'])
+        except (TypeError, ValueError):
+            return jsonify({'error': 'evento_id debe ser un número'}), 400
+
+        asientos = data.get('asientos', [])
+        if not isinstance(asientos, list):
+            return jsonify({'error': 'asientos debe ser una lista de códigos (ej. ["A1", "A2"])'}), 400
+
+        compra, error, status = crear_compra(evento_id, data.get('nombre'), data.get('correo'), asientos)
+        if error:
+            return jsonify({'error': error}), status
+        return jsonify(compra), status
+
+    # GET: listar compras, con filtro opcional ?evento_id=
     compras = cargar_compras()
-    return render_template('historial.html', compras=compras)
+    evento_id_filtro = request.args.get('evento_id', type=int)
+    if evento_id_filtro is not None:
+        compras = [c for c in compras if c.get('evento_id') == evento_id_filtro]
+    return jsonify(compras)
+
+@app.route('/api/compras/<int:compra_id>')
+def api_compra_detalle(compra_id):
+    """Recurso individual de compra"""
+    compras = cargar_compras()
+    compra = next((c for c in compras if c['id'] == compra_id), None)
+    if not compra:
+        return jsonify({'error': 'Compra no encontrada'}), 404
+    return jsonify(compra)
+
+# --- Alias heredados (mantenidos por compatibilidad con versiones previas) ---
+
+@app.route('/api/asientos/<int:evento_id>')
+def api_asientos(evento_id):
+    """[Deprecado] Usar /api/eventos/<id>/asientos"""
+    return api_evento_asientos(evento_id)
 
 @app.route('/api/evento/<int:evento_id>')
 def api_evento(evento_id):
-    """API para obtener datos de un evento (JSON)"""
-    eventos = cargar_eventos()
-    evento = next((e for e in eventos if e['id'] == evento_id), None)
-    
-    if evento:
-        return jsonify(evento)
-    return jsonify({'error': 'Evento no encontrado'}), 404
+    """[Deprecado] Usar /api/eventos/<id>"""
+    return api_evento_detalle(evento_id)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
