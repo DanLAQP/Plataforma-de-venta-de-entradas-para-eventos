@@ -1,0 +1,301 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1784172272919,28,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-1,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,24,0,17
+1784172272952,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-1,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172272957,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-1,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,23,0,1
+1784172272981,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-1,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172272986,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-1,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172272990,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-1,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172273014,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-1,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172273018,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-1,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172273022,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-1,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
+1784172273045,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-1,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172273050,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-1,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172273054,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-1,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172273077,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-1,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172273082,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-1,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172273086,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-1,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,23,0,1
+1784172273335,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-2,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172273339,2,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-2,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,2,0,1
+1784172273342,25,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-2,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,25,0,1
+1784172273369,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-2,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172273373,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-2,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172273378,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-2,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,23,0,1
+1784172273402,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-2,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172273406,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-2,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172273410,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-2,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172273433,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-2,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172273437,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-2,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172273441,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-2,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172273465,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-2,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172273469,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-2,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172273473,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-2,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,23,0,1
+1784172273834,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-3,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172273838,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-3,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,2
+1784172273843,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-3,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,23,0,1
+1784172273867,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-3,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,0
+1784172273871,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-3,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172273875,21,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-3,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
+1784172273897,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-3,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172273901,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-3,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172273905,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-3,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172273928,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-3,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172273932,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-3,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172273936,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-3,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
+1784172273958,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-3,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,2
+1784172273963,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-3,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172273967,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-3,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172274331,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-4,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172274335,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-4,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172274339,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-4,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172274362,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-4,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172274366,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-4,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172274370,21,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-4,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
+1784172274392,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-4,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172274397,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-4,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172274401,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-4,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172274424,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-4,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,2
+1784172274429,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-4,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172274433,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-4,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172274455,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-4,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172274460,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-4,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172274464,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-4,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
+1784172274830,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-5,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172274834,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-5,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172274839,28,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-5,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,28,0,1
+1784172274869,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-5,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172274874,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-5,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172274879,24,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-5,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,23,0,1
+1784172274903,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-5,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172274908,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-5,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172274913,21,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-5,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
+1784172274935,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-5,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172274939,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-5,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172274943,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-5,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
+1784172274965,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-5,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172274969,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-5,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172274973,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-5,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,23,0,1
+1784172275329,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-6,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172275333,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-6,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,2
+1784172275338,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-6,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172275361,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-6,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172275365,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-6,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172275369,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-6,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172275392,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-6,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172275396,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-6,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172275400,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-6,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
+1784172275422,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-6,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172275427,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-6,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172275431,21,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-6,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
+1784172275452,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-6,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172275456,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-6,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172275460,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-6,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172275831,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-7,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,0
+1784172275834,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-7,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172275838,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-7,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172275861,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-7,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172275866,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-7,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,0
+1784172275870,21,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-7,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
+1784172275892,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-7,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172275896,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-7,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172275900,21,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-7,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
+1784172275922,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-7,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172275926,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-7,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172275930,21,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-7,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
+1784172275952,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-7,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172275956,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-7,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172275960,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-7,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172276330,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-8,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172276334,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-8,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172276338,25,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-8,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,25,0,1
+1784172276364,42,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-8,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,42,0,2
+1784172276407,8,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-8,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,8,0,1
+1784172276416,34,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-8,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,34,0,2
+1784172276451,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-8,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172276455,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-8,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172276460,24,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-8,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,24,0,1
+1784172276485,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-8,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172276489,5,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-8,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,5,0,2
+1784172276494,25,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-8,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,25,0,1
+1784172276520,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-8,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172276524,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-8,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172276529,24,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-8,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,24,0,1
+1784172276831,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-9,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172276835,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-9,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172276839,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-9,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,23,0,1
+1784172276863,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-9,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172276867,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-9,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172276872,29,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-9,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,29,0,1
+1784172276902,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-9,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172276907,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-9,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172276912,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-9,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,23,0,1
+1784172276936,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-9,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172276939,5,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-9,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172276944,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-9,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172276967,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-9,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172276971,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-9,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172276975,24,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-9,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,24,0,1
+1784172277329,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-10,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172277332,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-10,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172277336,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-10,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172277359,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-10,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172277362,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-10,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172277366,21,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-10,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
+1784172277388,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-10,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172277392,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-10,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172277396,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-10,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172277419,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-10,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172277423,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-10,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172277427,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-10,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172277450,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-10,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172277454,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-10,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172277458,21,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-10,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
+1784172277831,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-11,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172277835,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-11,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172277839,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-11,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172277862,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-11,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172277866,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-11,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,2
+1784172277870,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-11,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,23,0,1
+1784172277894,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-11,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172277898,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-11,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172277902,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-11,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,23,0,1
+1784172277926,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-11,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172277931,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-11,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172277935,24,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-11,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,24,0,1
+1784172277960,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-11,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172277964,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-11,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172277968,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-11,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172278330,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-12,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,0
+1784172278333,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-12,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172278337,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-12,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172278359,5,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-12,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,5,0,2
+1784172278365,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-12,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172278369,21,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-12,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
+1784172278391,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-12,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172278395,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-12,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172278399,21,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-12,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
+1784172278421,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-12,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172278425,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-12,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172278429,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-12,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172278452,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-12,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,0
+1784172278455,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-12,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,2
+1784172278460,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-12,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172278830,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-13,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172278833,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-13,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172278837,25,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-13,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,25,0,1
+1784172278863,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-13,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172278867,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-13,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172278871,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-13,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172278894,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-13,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,0
+1784172278897,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-13,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172278901,21,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-13,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
+1784172278923,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-13,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172278927,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-13,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172278931,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-13,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172278954,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-13,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172278959,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-13,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172278963,25,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-13,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,25,0,1
+1784172279329,5,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-14,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172279334,8,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-14,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,8,0,1
+1784172279343,48,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-14,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,47,0,1
+1784172279392,5,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-14,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,5,0,1
+1784172279397,5,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-14,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,5,0,1
+1784172279403,37,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-14,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,37,0,1
+1784172279441,5,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-14,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,5,0,1
+1784172279447,5,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-14,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,5,0,1
+1784172279452,28,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-14,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,28,0,1
+1784172279481,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-14,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172279485,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-14,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,2
+1784172279490,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-14,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,23,0,1
+1784172279514,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-14,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172279518,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-14,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172279522,25,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-14,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,25,0,1
+1784172279829,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-15,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172279833,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-15,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172279836,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-15,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,23,0,1
+1784172279860,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-15,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172279865,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-15,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172279869,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-15,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,23,0,1
+1784172279893,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-15,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172279898,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-15,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172279902,24,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-15,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,24,0,1
+1784172279927,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-15,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172279931,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-15,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172279935,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-15,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172279958,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-15,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172279963,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-15,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172279967,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-15,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,0
+1784172280329,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-16,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172280333,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-16,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172280336,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-16,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172280359,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-16,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172280364,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-16,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172280368,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-16,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172280390,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-16,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172280395,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-16,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172280399,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-16,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,23,0,1
+1784172280423,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-16,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172280427,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-16,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172280432,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-16,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,23,0,1
+1784172280456,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-16,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172280460,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-16,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172280464,25,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-16,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,25,0,1
+1784172280829,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-17,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172280832,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-17,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172280836,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-17,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172280858,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-17,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172280862,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-17,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172280866,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-17,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,23,0,1
+1784172280890,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-17,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172280894,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-17,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172280897,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-17,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172280919,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-17,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172280923,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-17,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172280927,28,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-17,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,28,0,1
+1784172280956,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-17,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172280960,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-17,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172280964,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-17,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,2
+1784172281328,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-18,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172281333,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-18,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172281337,25,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-18,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,25,0,1
+1784172281363,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-18,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172281368,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-18,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172281372,26,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-18,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,26,0,1
+1784172281399,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-18,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172281403,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-18,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172281407,25,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-18,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,25,0,2
+1784172281432,5,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-18,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,5,0,2
+1784172281437,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-18,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172281441,25,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-18,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,25,0,1
+1784172281467,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-18,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172281471,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-18,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172281475,24,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-18,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,24,0,1
+1784172281829,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-19,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172281834,5,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-19,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,5,0,1
+1784172281840,38,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-19,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,37,0,1
+1784172281878,6,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-19,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,5,0,2
+1784172281884,6,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-19,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,5,0,1
+1784172281890,29,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-19,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,29,0,2
+1784172281920,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-19,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172281924,5,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-19,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,5,0,2
+1784172281930,26,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-19,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,26,0,1
+1784172281957,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-19,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,1
+1784172281962,5,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-19,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,4,0,1
+1784172281967,25,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-19,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,24,0,1
+1784172281992,5,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-19,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,5,0,1
+1784172281998,4,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-19,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172282002,23,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-19,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,23,0,1
+1784172282328,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-20,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172282332,2,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-20,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,2,0,0
+1784172282335,21,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-20,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,20,0,1
+1784172282356,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-20,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172282360,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-20,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172282363,21,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-20,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,2
+1784172282385,3,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-20,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,3,0,1
+1784172282388,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-20,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172282391,21,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-20,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
+1784172282412,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-20,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,2
+1784172282416,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-20,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172282419,22,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-20,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,22,0,1
+1784172282441,4,GET Listar Eventos,200,OK,Escenario 1 - 20 usuarios 1-20,text,true,,5443,127,1,1,http://localhost:5000/api/eventos,4,0,2
+1784172282445,3,GET Detalle de Evento,200,OK,Escenario 1 - 20 usuarios 1-20,text,true,,1382,129,1,1,http://localhost:5000/api/eventos/1,3,0,1
+1784172282449,21,GET Mapa de Asientos,200,OK,Escenario 1 - 20 usuarios 1-20,text,true,,22025,138,1,1,http://localhost:5000/api/eventos/1/asientos,21,0,1
